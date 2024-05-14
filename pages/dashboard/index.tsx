@@ -1,8 +1,8 @@
 import React from "react";
-import Sidebar from '../components/Sidebar';
-// import MobileMenuBar from '../components/MobileMenuBar';
+import { useRouter } from "next/router";
 
 export default function Dashboard({ isLoggedIn }: any) {
+  const router = useRouter();
 
   if (!isLoggedIn) {
     return (
@@ -17,6 +17,7 @@ export default function Dashboard({ isLoggedIn }: any) {
       <div className="flex-grow p-4">
         <h2 className="text-2xl mb-4">Dashboard</h2>
         <p>Welcome to your dashboard!</p>
+        <button onClick={() => router.push("/dashboard/table")}>Next Page</button>
         {/* Dashboard content goes here */}
       </div>
     </div>
